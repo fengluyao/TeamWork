@@ -365,5 +365,41 @@ window.onscroll=function(){
     if(t>=2000){
       $("#module").attr("class","module fade in");
     }
+    if(t>=2200){
+      $("#team").attr("class","team fade in");
+    }
+    if(t>=2600){
+      $("#team_header").attr("class","team_header fade_header in_header");
+    }
+    if(t>=2800){
+      $("#swiper-container").attr("class","swiper-container fade in")
+    }
+    if(t>=3200){
+      $("#news_header").attr("class","container_header fade_header in_header");
+    }
+    if(t>=3400){
+      $("#container_list").attr("class","container_list fade in");
+    }
+    if(t>=3600){
+      $("#first").attr("class","first fade in");
+    }
+    if(t>=3800){
+      $("#two").attr("class","two fade in");
+    }
+    if(t>=4100){
+      $("#partner_header").attr("class","container_header fade_header in_header");
+    }
+    if(t>=4300){
+      $("#partner_content").attr("class","partner_content fade in");
+    }
+    if(t>=4600){
+      $("#contact_header").attr("class","container_header fade_header in_header")
+    }
+    if(t>=4900){
+      $("#contactinfo").attr("class","contactinfo fade_left in_left")
+    }
+    if(t>=4900){
+      $("#contactform").attr("class","contactform fade_right in_right")
+    }
   }
 }
