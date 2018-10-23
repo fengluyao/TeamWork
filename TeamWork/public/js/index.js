@@ -389,22 +389,22 @@ window.onscroll=function(){
     if(t<1800){
       $("#mediabody").attr("class","mediabody fade_left");
     }
-    if(t>=2100){
+    if(t>=2300){
       $("#module").attr("class","module fade in");
     }
-    if(t<2100){
+    if(t<2300){
       $("#module").attr("class","module fade");
     }
-    if(t>=2200){
+    if(t>=2400){
       $("#team").attr("class","team fade in");
     }
-    if(t<2200){
+    if(t<2400){
       $("#team").attr("class","team fade");
     }
-    if(t>=2600){
+    if(t>=2500){
       $("#team_header").attr("class","team_header fade_header in_header");
     }
-    if(t<2600){
+    if(t<2500){
       $("#team_header").attr("class","team_header fade_header");
     }
     if(t>=2800){
@@ -472,6 +472,7 @@ window.onscroll=function(){
 
 
 
+//
   $(".container_category a").hover(//给目标元素绑定hover事件
       function(e){
           move.call(this,e,true)//移入
@@ -547,6 +548,142 @@ window.onscroll=function(){
       }       
   }
 
+//项目遮罩层
+  $(".project_item").hover(//给目标元素绑定hover事件
+    function(e){
+        movede.call(this,e,true)//移入
+    },
+    function(e){
+        movede.call(this,e,false)//移出
+    }
+);
+function movede(e,bool){
+    var top=$(this).offset().top;
+    var left=$(this).offset().left;
+    var bottom=top+$(this).height();
+    var right=left+$(this).width();
+
+    var x=e.pageX;
+    var y=e.pageY;
+
+    var sT=Math.abs(y-top);
+    var sB=Math.abs(bottom-y);
+    var sL=Math.abs(x-left);
+    var sR=Math.abs(right-x);
+
+    var min=Math.min(sT,sB,sL,sR);
+    switch(min){
+        case sT:
+            if(bool){
+                $(this).find(".item_wrapper").css({
+                    left:0,
+                    top:-300
+                }).stop().animate({top:0},100);
+            }else{
+                $(this).find(".item_wrapper").stop().animate({top:-300},100);
+            }
+            break;
+        case sB:
+            if(bool){
+                $(this).find(".item_wrapper").css({
+                    left:0,
+                    top:300
+                }).stop().animate({top:0},100);
+            }else{
+                $(this).find(".item_wrapper").stop().animate({top:300},100);
+            }
+            break;
+        case sL:
+            if(bool){
+                $(this).find(".item_wrapper").css({
+                    left:-300,
+                    top:0
+                }).stop().animate({left:0},100);
+            }else{
+                $(this).find(".item_wrapper").stop().animate({left:-300},100);
+            }
+            break;
+        case sR:
+            if(bool){
+                $(this).find(".item_wrapper").css({
+                    left:300,
+                    top:0
+                }).stop().animate({left:0},100);
+            }else{
+                $(this).find(".item_wrapper ").stop().animate({left:300},100);
+            }
+            break;
+    }       
+}
+
+
+
+$(".partner_list .item-partner").hover(//给目标元素绑定hover事件
+  function(e){
+      moved.call(this,e,true)//移入
+  },
+  function(e){
+      moved.call(this,e,false)//移出
+  }
+);
+function moved(e,bool){
+  var top=$(this).offset().top;
+  var left=$(this).offset().left;
+  var bottom=top+$(this).height();
+  var right=left+$(this).width();
+
+  var x=e.pageX;
+  var y=e.pageY;
+
+  var sT=Math.abs(y-top);
+  var sB=Math.abs(bottom-y);
+  var sL=Math.abs(x-left);
+  var sR=Math.abs(right-x);
+
+  var min=Math.min(sT,sB,sL,sR);
+  switch(min){
+      case sT:
+          if(bool){
+              $(this).find(".item_wrapper").css({
+                  left:0,
+                  top:-300
+              }).stop().animate({top:0},100);
+          }else{
+              $(this).find(".item_wrapper").stop().animate({top:-300},100);
+          }
+          break;
+      case sB:
+          if(bool){
+              $(this).find(".item_wrapper").css({
+                  left:0,
+                  top:300
+              }).stop().animate({top:0},100);
+          }else{
+              $(this).find(".item_wrapper").stop().animate({top:300},100);
+          }
+          break;
+      case sL:
+          if(bool){
+              $(this).find(".item_wrapper").css({
+                  left:-300,
+                  top:0
+              }).stop().animate({left:0},100);
+          }else{
+              $(this).find(".item_wrapper").stop().animate({left:-300},100);
+          }
+          break;
+      case sR:
+          if(bool){
+              $(this).find(".item_wrapper").css({
+                  left:300,
+                  top:0
+              }).stop().animate({left:0},100);
+          }else{
+              $(this).find(".item_wrapper ").stop().animate({left:300},100);
+          }
+          break;
+  }       
+}
 
 
 
