@@ -43,15 +43,35 @@ body{
     color: #7f7f7f;
     text-decoration: none;
 }
+.header>.nav>ul>li:hover{
+    border-top: 2px solid #fff;
+}
 .header>.nav>ul>li:hover a{
     color: #fff;
 }
-.move{
-    width: 70px;
-    height: 2px;
-    background-color: #fff;
+.nav>ul>li:nth-child(4):hover .two{
+    display: block;
+}
+.two{
     position: absolute;
     top: 0;
+    left: 0;
+    list-style: none;
+    display: none;
+    width: 100%;
+    height: 80px;
+}
+.two>li{
+    width: 100%;
+    height: 20px;
+}
+.two>li a{
+    width: 100%;
+    height: 20px;
+    color: #7f7f7f;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
 }
 .lunbo{
     width: 1400px;
@@ -441,7 +461,59 @@ body{
     padding-bottom: 55px;
     position: relative;
 }
-.list_box{
+.container_category{
+    width:1170px;
+    height:82px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin:0 auto;
+    text-align: center;
+}
+.container_category a{
+    display: inline-block;
+    width:104px;
+    height:34px;
+    /* padding:10px 26px 10px 26px; */
+    font-size: 13px;
+    position: relative;
+    overflow: hidden;
+    line-height: 34px;
+    color: #fff;
+    text-decoration: none;
+    /*border:1px solid red;*/
+}
+.container_category a .category_mask{
+    position: absolute;
+    top:-32px;
+    left:0;
+    width:100px;
+    height:32px;
+    background-color: rgba(59,59,59,.7);
+}
+.container_category a .category_text{
+    color:white;
+    position: absolute;
+    top: 0px;
+    left: 26px;
+    display: none;
+}
+div.container_category>a:first-child>span:last-child{
+    left:39px;   
+}
+.container_category a::after{
+    content: "";
+    display: block;
+    width:1px;
+    height:12px;
+    position: absolute;
+    background-color: #3b3b3b;
+    top:12px;
+    right:0px;
+} 
+.container_category a:last-child::after{
+    display: none;
+}
+/* .list_box{
     list-style: none;
     width: 400px;
     margin:auto;
@@ -449,8 +521,8 @@ body{
 .list_box li{
     float: left;
     width: 80px;
-    height: 12px;
-    line-height: 12px;
+    height: 20px;
+    line-height: 20px;
     text-align: center;
     position: relative;
 }
@@ -462,6 +534,9 @@ body{
     color: #fff;
 }
 .list_box li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     color: #7f7f7f;
     text-decoration: none;
     font-size: 12px;
@@ -470,19 +545,21 @@ body{
     display: inline-block;
     width: 1px;
     height: 12px;
+    position: absolute;
+    top: 5px;
+    right: 0;
     background-color: #7f7f7f;
-    float: right;
 }
 .list_box li .block{
     display: inline-block;
     position: absolute;
     top: 15px;
     left: 10px;
-    width: 60px;
-    height: 15px;
+    width: 100%;
+    height: 20px;
     background: #ddd;
     opacity: 0;
-}
+} */
 .container_content{
     width: 100%;
     height: 490px;
@@ -1044,14 +1121,16 @@ canvas{
     position: relative;
     background: #232323;
     transition: all 0.3s ease;
+    overflow: hidden;
 }
-.partner_list li a:hover{
+/* .partner_list li a:hover{
     background-color: #3f3f3f;
-}
+} */
 .contact{
     width: 100%;
     height: 665px;
     position: relative;
+    overflow: hidden;
     border-bottom: 1px solid #282828;
 }
 .contact_container{
@@ -1217,7 +1296,7 @@ canvas{
 .fade{
     top:200px;
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 .in{
     top:0px;
@@ -1227,7 +1306,7 @@ canvas{
 .fade_right{
     right: -300px;
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 .in_right{
     right: 0;
@@ -1236,7 +1315,7 @@ canvas{
 .fade_left{
     right: 300px;
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 .in_left{
     right: 0;
@@ -1246,9 +1325,24 @@ canvas{
 .fade_header{
     top: 200px;
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 .in_header{
     top: 0;
     opacity: 1;
+}
+
+.slidiv{
+    height:100%;
+    width:100%;
+    background: rgba(0,0,0,0.5);
+    position: absolute;
+    left:0;
+    top:0;
+    text-align: center;
+    opacity: 0;
+}
+.slidiv.trans{
+    transition: all .2s;
+    backface-visibility: hidden;
 }

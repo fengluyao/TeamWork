@@ -75,7 +75,7 @@ var timer = setInterval(function(){
             t=1;
             break;
   }
-},2000);
+},3000);
 var prev = $(".owl-prev");
 var next = $(".owl-next");
 var i = 1;
@@ -335,71 +335,400 @@ window.onscroll=function(){
     var t = document.documentElement.scrollTop||document.body.scrollTop;
     //服务部分
     var elem = $("#service");
-    if(t>=0){
+    if(t>0){
       elem.attr("class","service fade in");
+    }
+    if(t<=0){
+      elem.attr("class","service fade");
     }
     if(t>=200){
       $("#service_header").attr("class","service_header fade_header in_header");
     }
+    if(t<200){
+      $("#service_header").attr("class","service_header fade_header");
+    }
     if(t>=600){
       $("#service_container").attr("class","service_container fade in");
+    }
+    if(t<600){
+      $("#service_container").attr("class","service_container fade");
     }
     if(t>=900){
       $("#project_header").attr("class","container_header fade_header in_header");
     }
+    if(t<900){
+      $("#project_header").attr("class","container_header fade_header");
+    }
     if(t>=1050){
       $("#pro_container_list").attr("class","pro_container_list fade in");
+    }
+    if(t<1050){
+      $("#pro_container_list").attr("class","pro_container_list fade");
     }
     if(t>=1200){
       $("#project_content").attr("class","container_content fade in");
     }
+    if(t<1200){
+      $("#project_content").attr("class","container_content fade");
+    }
     if(t>=1700){
       $("#about").attr("class","about fade in");
+    }
+    if(t<1700){
+      $("#about").attr("class","about fade");
     }
     if(t>=1800){
       $("#text-wrapper").attr("class","text-wrapper fade_right in_right");
     }
+    if(t<1800){
+      $("#text-wrapper").attr("class","text-wrapper fade_right");
+    }
     if(t>=1800){
       $("#mediabody").attr("class","mediabody fade_left in_left");
     }
-    if(t>=2000){
+    if(t<1800){
+      $("#mediabody").attr("class","mediabody fade_left");
+    }
+    if(t>=2100){
       $("#module").attr("class","module fade in");
+    }
+    if(t<2100){
+      $("#module").attr("class","module fade");
     }
     if(t>=2200){
       $("#team").attr("class","team fade in");
     }
+    if(t<2200){
+      $("#team").attr("class","team fade");
+    }
     if(t>=2600){
       $("#team_header").attr("class","team_header fade_header in_header");
+    }
+    if(t<2600){
+      $("#team_header").attr("class","team_header fade_header");
     }
     if(t>=2800){
       $("#swiper-container").attr("class","swiper-container fade in")
     }
+    if(t<2800){
+      $("#swiper-container").attr("class","swiper-container fade")
+    }
     if(t>=3200){
       $("#news_header").attr("class","container_header fade_header in_header");
+    }
+    if(t<3200){
+      $("#news_header").attr("class","container_header fade_header");
     }
     if(t>=3400){
       $("#container_list").attr("class","container_list fade in");
     }
+    if(t<3400){
+      $("#container_list").attr("class","container_list fade");
+    }
     if(t>=3600){
       $("#first").attr("class","first fade in");
+    }
+    if(t<3600){
+      $("#first").attr("class","first fade");
     }
     if(t>=3800){
       $("#two").attr("class","two fade in");
     }
+    if(t<3800){
+      $("#two").attr("class","two fade");
+    }
     if(t>=4100){
       $("#partner_header").attr("class","container_header fade_header in_header");
+    }
+    if(t<4100){
+      $("#partner_header").attr("class","container_header fade_header");
     }
     if(t>=4300){
       $("#partner_content").attr("class","partner_content fade in");
     }
+    if(t<4300){
+      $("#partner_content").attr("class","partner_content fade");
+    }
     if(t>=4600){
       $("#contact_header").attr("class","container_header fade_header in_header")
+    }
+    if(t<4600){
+      $("#contact_header").attr("class","container_header fade_header")
     }
     if(t>=4900){
       $("#contactinfo").attr("class","contactinfo fade_left in_left")
     }
+    if(t<4900){
+      $("#contactinfo").attr("class","contactinfo fade_left")
+    }
     if(t>=4900){
       $("#contactform").attr("class","contactform fade_right in_right")
     }
+    if(t<4900){
+      $("#contactform").attr("class","contactform fade_right")
+    }
   }
 }
+
+
+
+  $(".container_category a").hover(//给目标元素绑定hover事件
+      function(e){
+          move.call(this,e,true)//移入
+      },
+      function(e){
+          move.call(this,e,false)//移出
+      }
+  );
+  function move(e,bool){
+      var top=$(this).offset().top;
+      var left=$(this).offset().left;
+      var bottom=top+$(this).height();
+      var right=left+$(this).width();
+
+      var x=e.pageX;
+      var y=e.pageY;
+
+      var sT=Math.abs(y-top);
+      var sB=Math.abs(bottom-y);
+      var sL=Math.abs(x-left);
+      var sR=Math.abs(right-x);
+
+      var min=Math.min(sT,sB,sL,sR);
+      switch(min){
+          case sT:
+              if(bool){
+                  $(this).find("span.category_text").css("display","inline-block");
+                  $(this).find("div.category_mask").css({
+                      left:0,
+                      top:-32
+                  }).stop().animate({top:0},100);
+              }else{
+                  $(this).find("span.category_text").css("display","none");
+                  $(this).find("div.category_mask").stop().animate({top:-32},100);
+              }
+              break;
+          case sB:
+              if(bool){
+                  $(this).find("span.category_text").css("display","inline-block");
+                  $(this).find("div.category_mask").css({
+                      left:0,
+                      top:64
+                  }).stop().animate({top:0},100);
+              }else{
+                  $(this).find("span.category_text").css("display","none");
+                  $(this).find("div.category_mask").stop().animate({top:64},100);
+              }
+              break;
+          case sL:
+              if(bool){
+                  $(this).find("span.category_text").css("display","inline-block");
+                  $(this).find("div.category_mask").css({
+                      left:-100,
+                      top:0
+                  }).stop().animate({left:0},100);
+              }else{
+                  $(this).find("span.category_text").css("display","none");
+                  $(this).find("div.category_mask").stop().animate({left:-100},100);
+              }
+              break;
+          case sR:
+              if(bool){
+                  $(this).find("span.category_text").css("display","inline-block");
+                  $(this).find("div.category_mask").css({
+                      left:104,
+                      top:0
+                  }).stop().animate({left:0},100);
+              }else{
+                  $(this).find("span.category_text").css("display","none");
+                  $(this).find("div.category_mask").stop().animate({left:104},100);
+              }
+              break;
+      }       
+  }
+
+
+
+
+
+
+
+//滑动遮罩层
+// $(".partner_list li a").each(function(){
+//   $(this).append("<div class=slidiv></div>");
+// });
+// $(".partner_list li a").bind("mouseenter mouseleave",  function(e) {
+//   this_slidiv = $(this).find('.slidiv');
+//   this_slidiv.css("opacity","1");
+//   var w = $(this).width();
+//   var h = $(this).height();
+//   var x = e.offsetX ;//(- this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+//   var y = e.offsetY ;//(- this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+//   var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+
+   
+//    if(e.type == 'mouseenter'){
+//        switch(direction){
+//          case 0 :
+//            this_slidiv.css({top:-h,left:"0px"});
+//              break;
+//          case 1:
+//            this_slidiv.css({top:"0px",left:w});
+//              break;
+//          case 2:
+//            this_slidiv.css({top:h,left:"0px"});
+//              break;
+//          case 3:
+//            this_slidiv.css({top:"0px",left:-w});
+//              break;
+//     }
+  
+//       this_slidiv.stop(true,true).animate({"top":"0px","left":"0px"},"fast");
+      
+//    }else if(e.type == 'mouseleave'){
+//        switch(direction){
+//          case 0 :
+//            this_slidiv.stop(true,true).animate({"top":-h},"fast");
+//              break;
+//          case 1:
+//            this_slidiv.stop(true,true).animate({"left":w},"fast");
+//              break;
+//          case 2:
+//            this_slidiv.stop(true,true).animate({"top":h},"fast");
+//              break;
+//          case 3:
+//            this_slidiv.stop(true,true).animate({"left":-w},"fast");
+//              break;
+//     }		
+//  }
+// });
+
+
+
+
+
+
+
+
+//这个模块完成鼠标方向判断的功能
+// var MouseDirection = function (element, opts) {
+
+//   var $element = $(element);
+
+//   //enter leave代表鼠标移入移出时的回调
+//   opts = $.extend({}, {
+//       enter: $.noop,
+//       leave: $.noop
+//   }, opts || {});
+
+//   var dirs = ['top', 'right', 'bottom', 'left'];
+
+//   var calculate = function (element, e) {
+//       /*以浏览器可视区域的左上角建立坐标系*/
+
+//       //表示左上角和右下角及中心点坐标
+//       var x1, y1, x4, y4, x0, y0;
+
+//       //表示左上角和右下角的对角线斜率
+//       var k;
+
+//       //用getBoundingClientRect比较省事，而且它的兼容性还不错
+//       var rect = element.getBoundingClientRect();
+
+//       if (!rect.width) {
+//           rect.width = rect.right - rect.left;
+//       }
+
+//       if (!rect.height) {
+//           rect.height = rect.bottom - rect.top;
+//       }
+
+//       //求各个点坐标 注意y坐标应该转换为负值，因为浏览器可视区域左上角为(0,0)，整个可视区域属于第四象限
+//       x1 = rect.left;
+//       y1 = -rect.top;
+
+//       x4 = rect.left + rect.width;
+//       y4 = -(rect.top + rect.height);
+
+//       x0 = rect.left + rect.width / 2;
+//       y0 = -(rect.top + rect.height / 2);
+
+//       //矩形不够大，不考虑
+//       if (Math.abs(x1 - x4) < 0.0001) return 4;
+
+//       //计算对角线斜率
+//       k = (y1 - y4) / (x1 - x4);
+
+//       var range = [k, -k];
+
+//       //表示鼠标当前位置的点坐标
+//       var x, y;
+
+//       x = e.clientX;
+//       y = -e.clientY;
+
+//       //表示鼠标当前位置的点与元素中心点连线的斜率
+//       var kk;
+
+//       kk = (y - y0) / (x - x0);
+
+//       //如果斜率在range范围内，则鼠标是从左右方向移入移出的
+//       if (isFinite(kk) && range[0] < kk && kk < range[1]) {
+//           //根据x与x0判断左右
+//           return x > x0 ? 1 : 3;
+//       } else {
+//           //根据y与y0判断上下
+//           return y > y0 ? 0 : 2;
+//       }
+//   };
+
+//   $element.on('mouseenter', function (e) {
+//       var r = calculate(this, e);
+//       opts.enter($element, dirs[r]);
+//   }).on('mouseleave', function (e) {
+//       var r = calculate(this, e);
+//       opts.leave($element, dirs[r]);
+//   });
+// };
+
+// $(".partner_list li a").each(function(){
+//   $(this).append("<div class='slidiv'></div>");
+// });
+
+// var DIR_POS = {
+//   left: {
+//       top: '0',
+//       left: '-100%'
+//   },
+//   right: {
+//       top: '0',
+//       left: '100%'
+//   },
+//   bottom: {
+//       top: '100%',
+//       left: '0'
+//   },
+//   top: {
+//       top: '-100%',
+//       left: '0'
+//   }
+// };
+// $('.partner_list li a').each(function () {
+//   new MouseDirection(this, {
+//       enter: function ($element, dir) {
+//           //每次进入前先把.trans类移除掉，以免后面调整位置的时候也产生过渡效果
+//           var $content = $element.find('.slidiv').removeClass('trans');
+//           //调整位置
+//           $content.css(DIR_POS[dir]);
+//           //reflow
+//           $content[0].offsetWidth;
+//           //启用过渡
+//           $content.addClass('trans');
+//           //滑入
+//           $content.css({left: '0', top: '0'});
+//       },
+//       leave: function ($element, dir) {
+//           $element.find('.slidiv').css(DIR_POS[dir]);
+//       }
+//   });
+// });

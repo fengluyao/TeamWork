@@ -42,11 +42,17 @@
                 <li><a href="./index.html">首页</a></li>
                 <li><a href="#">服务</a></li>
                 <li><a href="#">项目</a></li>
-                <li><a href="#">关于</a></li>
+                <li><a href="#">关于</a>
+                    <ul class="two">
+                        <li><a href="#">集团简介</a></li>
+                        <li><a href="#">荣誉资质</a></li>
+                        <li><a href="#">团队精英</a></li>
+                        <li><a href="#">合作伙伴</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">新闻</a></li>
                 <li><a href="#">联系</a></li>
                 <li><a href="#">招聘</a></li>
-                <div class="move"></div>
             </ul>
         </div>
     </div> 
@@ -301,13 +307,40 @@
                     <p>/PROJECT</p>
                 </div>
                 <div class="pro_container_list fade" id="pro_container_list">
-                    <ul class="list_box">
+                    <!-- <ul class="list_box">
                         <li><a href="#"><span>全部</span></a><div class="block"></div><i></i></li>
                         <li><a href="#"><span>规划设计</span></a><div class="block"></div><i></i></li>
                         <li><a href="#"><span>园林景观</span></a><div class="block"></div><i></i></li>
                         <li><a href="#"><span>教育建筑</span></a><div class="block"></div><i></i></li>
                         <li><a href="#"><span>居住建筑</span></a><div class="block"></div></li>
-                    </ul>
+                    </ul> -->
+                    <div class="container_category">
+                        <a href="#" class="active">
+                            <span>全部</span>
+                            <div class="category_mask"></div>
+                            <span class="category_text">全部</span>
+                        </a>
+                        <a href="#">
+                            <span>规划设计</span>
+                            <div class="category_mask"></div>    
+                            <span class="category_text">规划设计</span>
+                        </a>
+                        <a href="#">
+                            <span>园林景观</span>
+                            <div class="category_mask"></div>
+                            <span class="category_text">园林景观</span>
+                        </a>
+                        <a href="#">
+                            <span>教育建筑</span>
+                            <div class="category_mask"></div>
+                            <span class="category_text">教育建筑</span>
+                        </a>
+                        <a href="#">
+                            <span>居住建筑</span>
+                            <div class="category_mask"></div>
+                            <span class="category_text">居住建筑</span>
+                        </a>
+                </div>
                 </div>
                 <div class="container_content fade" id="project_content">
                     <div class="project_item">
@@ -639,62 +672,62 @@
                     <div class="container_wrapper">
                         <ul class="partner_list">
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471542571.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471598822.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/149147167119.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471726615.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471794980.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471808752.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/149147182358.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471835861.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471871985.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471881514.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/1491471891891.png" alt="">
                                 </a>
                             </li>
                             <li class="item-partner">
-                                <a href="#">
+                                <a href="javascript:void(0);">
                                 <img src="./images/149147190379.png" alt="">
                                 </a>
                             </li>
@@ -733,10 +766,10 @@
                                 <input type="email" class="inputtxt" placeholder="邮箱" name="email" id="email">
                             </p>
                             <p class="contactform_tel">
-                                <input type="phone" class="inputtxt" placeholder="电话" name="phone" id="phone">
+                                <input type="phone" class="inputtxt" placeholder="电话" name="phone" id="phone" maxlength="11" onblur="f2()">
                             </p>
                             <p class="contactform_content">
-                                <input type="text" class="inputtxt" placeholder="内容" name="content" id="content">
+                                <input type="text" class="inputtxt" placeholder="内容" name="content" id="content" onblur="f3()">
                             </p>
                             <p class="contactform_submit">
                                 <input type="submit" class="submit" value="提交" id="btn">
@@ -758,5 +791,60 @@
     <script src="./js/index.js"></script>
     <script src="./js/lib/stats.js"></script>
     
+    <script>
+        /*function f2(){
+			var phone=$("#phone").val();
+			if(phone==""){
+                layer.msg('手机号不能为空！！', {
+                    icon: 1,
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                });
+				$("#btn").disabled = true;
+			}else if(phone.length<11){
+                layer.msg('您输入的值小于11位！！', {
+                    icon: 1,
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                });
+				$("#btn").disabled = true;
+			}else
+			{
+				layer.msg('手机号格式正确！！', {
+                    icon: 1,
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                });
+				$("#btn").disabled = false;
+			}
+		}
+		//验证邮箱账号
+		function f3(){
+			var i = $("email").value.indexOf("@");
+			var j = $("email").value.lastIndexOf("@");
+			var k = $("email").value.indexOf(".com");
+			var l = $("email").value.lastIndexOf(".com")
+			if (i == -1 || i != j || i == 0 || i == $("email").value.length-1)
+			{
+				layer.msg('您输入的值小于11位！！', {
+                    icon: 1,
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                });
+				$("#btn").disabled = true;
+			}else if (k >= i+7 || k != l ||k != $("email").value.length-4)
+			{
+				layer.msg('您输入的值小于11位！！', {
+                    icon: 1,
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                });
+				$("#btn").disabled = true;
+			}
+			else
+			{
+				layer.msg('您输入的值小于11位！！', {
+                    icon: 1,
+                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                });
+				$("#btn").disabled = false;
+			}
+		}*/
+    </script>
 </body>
 </html>
