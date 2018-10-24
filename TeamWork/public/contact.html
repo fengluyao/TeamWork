@@ -12,28 +12,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="header ">
+    <div class="header">
         <div class="logo"><a href="./index.html"><img src="images/1490089038970.png" alt=""></a></div>
         <div class="nav">
             <ul>
-                <li><a href="./index.html" style="color:#fff;">首页</a></li>
+                <li><a href="./index.html">首页</a></li>
                 <li><a href="#">服务</a></li>
                 <li><a href="#">项目</a></li>
-                <li><a href="#">关于</a></li>
+                <li><a href="#">关于</a><i class="fa fa-angle-down" style="margin-left:5px;color:#7f7f7f;"></i>
+                    <ul class="navtwo">
+                        <li><a href="#" class="two_a">集团简介</a></li>
+                        <li><a href="#" class="two_a">荣誉资质</a></li>
+                        <li><a href="#" class="two_a">团队精英</a></li>
+                        <li><a href="#" class="two_a">合作伙伴</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">新闻</a></li>
                 <li><a href="#">联系</a></li>
                 <li><a href="#">招聘</a></li>
-                <div class="move"></div>
             </ul>
         </div>
     </div> 
     <div class="main mytable">
-        <div class="banner">
+        <div class="banner fade" id="banner">
             <div class="img" style="background-image:url(./images/1491448706133.jpg)"></div>
         </div>
         <div class="main_content">
             <div class="main_wrapper">
-                <div class="container_header">
+                <div class="container_header fade_header" id="container_header">
                     <p class="title">联系</p>
                     <p class="subtitle">/CONTACT</p>
                 </div>
@@ -46,7 +52,7 @@
                             <div id="mcontact" class="mcontact">
                                 <div class="module_container">
                                     <div class="contactlist" id="contactlist">
-                                        <div class="contactinfo" id="contactinfo">
+                                        <div class="contactinfo fade" id="contactinfo">
                                             <h3 class="ellipsis contact_name">网站建设文化传播有限公司</h3>
                                             <p class="ellipsis contact_add">地址：中国地区XX分区5A写字楼8-88室</p>
                                             <p class="ellipsis contact_zip">邮编：100000</p>
@@ -60,7 +66,7 @@
                                                 <a href="" class="fl"><i class="fa fa-weixin"></i></a>
                                             </div>
                                         </div>
-                                        <div class="canvas mytable">
+                                        <div class="canvas mytable fade" id="canvas">
                                             <ul class="canvasd">
                                                 <!-- <li class="item mytable">
                                                     <p class="named">当当</p>
@@ -68,7 +74,7 @@
                                                 </li> -->
                                             </ul>
                                         </div>
-                                        <div id="contactform" class="contactform">
+                                        <div id="contactform" class="contactform fade">
                                             <p class="contactform_name">
                                                 <input type="text" class="inputtxt" placeholder="姓名" name="uname" id="uname">
                                             </p>

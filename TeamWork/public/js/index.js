@@ -549,7 +549,7 @@ window.onscroll=function(){
   }
 
 //项目遮罩层
-  $(".project_item").hover(//给目标元素绑定hover事件
+$(".project_item").hover(//给目标元素绑定hover事件
     function(e){
         movede.call(this,e,true)//移入
     },
@@ -578,9 +578,9 @@ function movede(e,bool){
                 $(this).find(".item_wrapper").css({
                     left:0,
                     top:-300
-                }).stop().animate({top:0},100);
+                }).stop().animate({top:0},300);
             }else{
-                $(this).find(".item_wrapper").stop().animate({top:-300},100);
+                $(this).find(".item_wrapper").stop().animate({top:-300},300);
             }
             break;
         case sB:
@@ -588,9 +588,9 @@ function movede(e,bool){
                 $(this).find(".item_wrapper").css({
                     left:0,
                     top:300
-                }).stop().animate({top:0},100);
+                }).stop().animate({top:0},300);
             }else{
-                $(this).find(".item_wrapper").stop().animate({top:300},100);
+                $(this).find(".item_wrapper").stop().animate({top:300},300);
             }
             break;
         case sL:
@@ -598,9 +598,9 @@ function movede(e,bool){
                 $(this).find(".item_wrapper").css({
                     left:-300,
                     top:0
-                }).stop().animate({left:0},100);
+                }).stop().animate({left:0},300);
             }else{
-                $(this).find(".item_wrapper").stop().animate({left:-300},100);
+                $(this).find(".item_wrapper").stop().animate({left:-300},300);
             }
             break;
         case sR:
@@ -608,9 +608,9 @@ function movede(e,bool){
                 $(this).find(".item_wrapper").css({
                     left:300,
                     top:0
-                }).stop().animate({left:0},100);
+                }).stop().animate({left:0},300);
             }else{
-                $(this).find(".item_wrapper ").stop().animate({left:300},100);
+                $(this).find(".item_wrapper ").stop().animate({left:300},300);
             }
             break;
     }       
@@ -618,7 +618,7 @@ function movede(e,bool){
 
 
 
-$(".partner_list .item-partner").hover(//给目标元素绑定hover事件
+$(".partner_list .item-partner a").hover(//给目标元素绑定hover事件
   function(e){
       moved.call(this,e,true)//移入
   },
@@ -644,49 +644,53 @@ function moved(e,bool){
   switch(min){
       case sT:
           if(bool){
-              $(this).find(".item_wrapper").css({
+              $(this).find(".partner_mask").css({
                   left:0,
-                  top:-300
-              }).stop().animate({top:0},100);
+                  top:-200,
+                  opacity:1
+              }).stop().animate({top:0},300);
           }else{
-              $(this).find(".item_wrapper").stop().animate({top:-300},100);
+              $(this).find(".partner_mask").stop().animate({top:-300},300);
           }
           break;
       case sB:
           if(bool){
-              $(this).find(".item_wrapper").css({
+              $(this).find(".partner_mask").css({
                   left:0,
-                  top:300
-              }).stop().animate({top:0},100);
+                  top:200,
+                  opacity:1
+              }).stop().animate({top:0},300);
           }else{
-              $(this).find(".item_wrapper").stop().animate({top:300},100);
+              $(this).find(".partner_mask").stop().animate({top:300},300);
           }
           break;
       case sL:
           if(bool){
-              $(this).find(".item_wrapper").css({
-                  left:-300,
-                  top:0
-              }).stop().animate({left:0},100);
+              $(this).find(".partner_mask").css({
+                  left:-200,
+                  top:0,opacity:1
+              }).stop().animate({left:0},300);
           }else{
-              $(this).find(".item_wrapper").stop().animate({left:-300},100);
+              $(this).find(".partner_mask").stop().animate({left:-300},300);
           }
           break;
       case sR:
           if(bool){
-              $(this).find(".item_wrapper").css({
-                  left:300,
-                  top:0
-              }).stop().animate({left:0},100);
+              $(this).find(".partner_mask").css({
+                  left:200,
+                  top:0,opacity:1
+              }).stop().animate({left:0},300);
           }else{
-              $(this).find(".item_wrapper ").stop().animate({left:300},100);
+              $(this).find(".partner_mask").stop().animate({left:300},300);
           }
           break;
   }       
 }
 
 
-
+window.onload = function(){
+  $("#lunbo").attr("class","lunbo fade in");
+}
 
 
 
