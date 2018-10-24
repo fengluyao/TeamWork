@@ -50,17 +50,25 @@ body{
 .header>.nav>ul>li:hover a{
     color: #fff;
 }
+.fa{
+    color: #7f7f7f;
+}
+.nav>ul>li:nth-child(4):hover .fa{
+    color: #fff;
+}
 .nav>ul>li:nth-child(4):hover .navtwo{
     opacity: 1;
+    top: 55px;
 }
 .navtwo{
     position: absolute;
-    top: 60px;
+    top: -150px;
     left: 220px;
     opacity: 0;
     list-style: none;
     width: 200px;
     height: 160px;
+    z-index: -1;
     background-color: #1c1c1c;
     border-bottom: 1px solid #282828;
     transition: all 0.7s ease-out;
