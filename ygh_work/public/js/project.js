@@ -245,3 +245,24 @@
         }
     }
 })(); 
+/*按钮高亮*/
+(function(){
+    var category=document.querySelectorAll(".container_category a");
+    for(var i=0;i<category.length;i++){
+        category[i].onclick=function(){
+            for(var j=0;j<category.length;j++){
+                category[j].className="";
+            }
+            this.className="active";
+        }
+    }
+    var page=document.querySelectorAll("#pages a");
+    for(var i=0;i<page.length-1;i++){
+        page[i].onclick=function(){
+            for(var j=0;j<page.length-1;j++){
+                page[j].className="page_item";
+            }
+            this.className="page_item active";
+        }
+    }
+})();
