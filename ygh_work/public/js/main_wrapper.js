@@ -6,43 +6,42 @@ var ul2=document.querySelectorAll(".wrapper_container ul")[1];
 var ul3=document.querySelectorAll(".wrapper_container ul")[2];
 var probar=document.getElementById("probar");
 var animated=false;
-var timer;
+var timer=null;
+var pro=0;
+var progress=null;
 
 function animate(offset){
-    var newLeft=parseInt(ul2.style.left)+offset;
+    var newLeft=[];
+	for(var i=0;i<ul.length;i++){
+		newLeft[i]=parseInt(ul[i].style.left)+offset;
+	}
     var time=500;
     var interval=10;
     var speed=offset/(time/interval);
     function go(){
-        if(speed<0 && parseInt(ul2.style.left)>newLeft-speed || speed>0 && parseInt(ul2.style.left)<newLeft-speed){
+        if(speed<0 && parseInt(ul2.style.left)>newLeft[1]-speed || speed>0 && parseInt(ul2.style.left)<newLeft[1]-speed){
 			for(var i=0;i<ul.length;i++){
 				ul[i].style.left=parseInt(ul[i].style.left)+speed+"px";
 			}
-			/*ul1.style.left=parseInt(ul1.style.left)+speed+"px";
-            ul2.style.left=parseInt(ul2.style.left)+speed+"px";
-			ul3.style.left=parseInt(ul3.style.left)+speed+"px";*/
+			if(speed<0) speed+=0.23;
+			else speed-=0.23;
             setTimeout(go, interval);
         }else{
 			for(var i=0;i<ul.length;i++){
-				ul[i].style.left=newLeft+"px";
+				ul[i].style.left=newLeft[i]+"px";
 			}
-			if(newLeft<-1200*4){
+			if(newLeft[1]<-1200*4){
 				for(var i=0;i<ul.length;i++){
-					ul[i].style.left="-1200px";
+					if(i>=1) ul[i].style.left=-1200+"px";
+					else ul[i].style.left=-2315+"px";
 				}
 			}
-			if(newLeft>-1200){
+			if(newLeft[1]>-1200){
 				for(var i=0;i<ul.length;i++){
-					ul[i].style.left="-4800px";
+					if(i>=1) ul[i].style.left=-4800+"px";
+					else ul[i].style.left=-5915+"px";
 				}
 			}
-            /*ul2.style.left=newLeft+"px";
-			if(newLeft<-1200*4){
-				ul2.style.left="-1200px";
-			}
-			if(newLeft>-1200){
-				ul2.style.left="-4800px";
-			}*/
 			animated=false;
 		}
 	}
@@ -52,16 +51,30 @@ function animate(offset){
 
 rb.onclick=function(){
 	if(!animated){
+		clearInterval(progress);
 		animate(-1200);
+		pro=0;
+		probar.style.width=0;
+		autoplay();
 	}
 }
 lb.onclick=function(){
 	if(!animated){
+		clearInterval(progress);
 		animate(1200);
+		pro=0;
+		probar.style.width=0;
+		autoplay();
 	}
 }
 
 function autoplay(){
-	rb.onclick();
+	progress=setInterval(function(){
+		pro++;
+		probar.style.width=pro+"%";
+		if(pro>100){
+			rb.onclick();
+		}
+	},50);
 }
-timer=setInterval(autoplay,3000);
+autoplay();
