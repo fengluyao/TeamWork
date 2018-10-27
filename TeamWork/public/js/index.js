@@ -329,9 +329,9 @@ $("#btn").click(function(){
 
 
 //鼠标滚轮事件
-var d=0;
+var d = 0;
 window.onscroll=function(){
-  if(d==0){
+  if(d == 0){
     var t = document.documentElement.scrollTop||document.body.scrollTop;
     //服务部分
     var elem = $("#service");
@@ -465,12 +465,10 @@ window.onscroll=function(){
       $("#contactform").attr("class","contactform fade_right in_right")
     }
     if(t<4900){
-      $("#contactform").attr("class","contactform fade_right")
+      $("#contactform").attr("class","contactform fade_right");
     }
   }
 }
-
-
 
 //
   $(".container_category a").hover(//给目标元素绑定hover事件
@@ -689,8 +687,44 @@ function moved(e,bool){
 
 
 window.onload = function(){
-  $("#lunbo").attr("class","lunbo fade in");
+  $("#lunbo").attr("class","lunbo fade in");message();
 }
+//隐藏小的信息，显示大的信息
+function message(){
+  $("#message").css("right","-50px");
+  $("#message_big").css("right","10px");
+  unScroll()
+}
+//屏蔽滚动条
+function unScroll() {
+  var top = $(document).scrollTop();
+  $(document).on('scroll.unable',function (e) {
+      $(document).scrollTop(top);
+  })
+}
+//去除屏蔽滚动条
+function removeUnScroll() {
+  $(document).unbind("scroll.unable");
+}
+
+
+$("#message").click(function(){
+  message();
+})
+
+//隐藏大的信息，显示小的信息
+function removeMessage(){
+  $("#message").css("right","0");
+  $("#message_big").css("right","-200px");
+  removeUnScroll();
+}
+
+$("#close").click(function(){
+  removeMessage();
+  setTimeout(function(){
+    message();
+  },10000);
+})
 
 
 
