@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    max-width: 1400px;
+}
+.bg{
+    width: 100%;
+    height: 635px;
+    background-color: rgba(0,0,0,0.3);
+}
+.main{
+    width: 500px;
+    height: 100%;
+    margin: auto;
+    background: #ddd;
+}
+.main ul{
+    list-style: none;
+    position: relative;
+}
+.main ul li{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    background: red;
+}
+.main ul li a img{
+    width: 200px;
+    margin-top: 25px;
+}
+.main ul li.list_item1{
+    top: 60px;
+    left: 35px;
+}
+.main ul li.list_item2{
+    top: 60px;
+    right: 35px;
+}
+.main ul li.list_item3{
+    top: 285px;
+    left: 35px;
+}
+.main ul li.list_item4{
+    top: 285px;
+    right: 35px;
+}
+.main ul li.list_item5{
+    top: 180px;
+    left: 150px;
+}
