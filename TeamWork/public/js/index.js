@@ -395,76 +395,76 @@ window.onscroll=function(){
     if(t<2300){
       $("#module").attr("class","module fade");
     }
-    if(t>=2400){
-      $("#team").attr("class","team fade in");
-    }
-    if(t<2400){
-      $("#team").attr("class","team fade");
-    }
-    if(t>=2500){
-      $("#team_header").attr("class","team_header fade_header in_header");
-    }
-    if(t<2500){
-      $("#team_header").attr("class","team_header fade_header");
-    }
-    if(t>=2800){
-      $("#swiper-container").attr("class","swiper-container fade in")
-    }
-    if(t<2800){
-      $("#swiper-container").attr("class","swiper-container fade")
-    }
-    if(t>=3200){
+    // if(t>=2400){
+    //   $("#team").attr("class","team fade in");
+    // }
+    // if(t<2400){
+    //   $("#team").attr("class","team fade");
+    // }
+    // if(t>=2500){
+    //   $("#team_header").attr("class","team_header fade_header in_header");
+    // }
+    // if(t<2500){
+    //   $("#team_header").attr("class","team_header fade_header");
+    // }
+    // if(t>=2800){
+    //   $("#swiper-container").attr("class","swiper-container fade in")
+    // }
+    // if(t<2800){
+    //   $("#swiper-container").attr("class","swiper-container fade")
+    // }
+    if(t>=2600){
       $("#news_header").attr("class","container_header fade_header in_header");
     }
-    if(t<3200){
+    if(t<2600){
       $("#news_header").attr("class","container_header fade_header");
     }
-    if(t>=3400){
+    if(t>=2800){
       $("#container_list").attr("class","container_list fade in");
     }
-    if(t<3400){
+    if(t<2800){
       $("#container_list").attr("class","container_list fade");
     }
-    if(t>=3600){
+    if(t>=3000){
       $("#first").attr("class","first fade in");
     }
-    if(t<3600){
+    if(t<3000){
       $("#first").attr("class","first fade");
     }
-    if(t>=3800){
+    if(t>=3200){
       $("#two").attr("class","two fade in");
     }
-    if(t<3800){
+    if(t<3200){
       $("#two").attr("class","two fade");
     }
-    if(t>=4100){
+    if(t>=3500){
       $("#partner_header").attr("class","container_header fade_header in_header");
     }
-    if(t<4100){
+    if(t<3500){
       $("#partner_header").attr("class","container_header fade_header");
     }
-    if(t>=4300){
+    if(t>=3700){
       $("#partner_content").attr("class","partner_content fade in");
     }
-    if(t<4300){
+    if(t<3700){
       $("#partner_content").attr("class","partner_content fade");
     }
-    if(t>=4600){
+    if(t>=4200){
       $("#contact_header").attr("class","container_header fade_header in_header")
     }
-    if(t<4600){
+    if(t<4200){
       $("#contact_header").attr("class","container_header fade_header")
     }
-    if(t>=4900){
+    if(t>=4200){
       $("#contactinfo").attr("class","contactinfo fade_left in_left")
     }
-    if(t<4900){
+    if(t<4200){
       $("#contactinfo").attr("class","contactinfo fade_left")
     }
-    if(t>=4900){
+    if(t>=4200){
       $("#contactform").attr("class","contactform fade_right in_right")
     }
-    if(t<4900){
+    if(t<4200){
       $("#contactform").attr("class","contactform fade_right");
     }
   }

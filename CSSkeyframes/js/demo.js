@@ -1,9 +1,11 @@
 /* Variables */
 var AnimEnd = 'animationend webkitAnimationEnd mozAnimationEnd MSAnimationEnd oAnimationEnd';
-var nav = $('.nav');
-var navButton = $('.nav-el');
+var nav = $('.main ul');
+var navButton = $('.main ul li');
 var overlay = $('.overlay');
 
+console.log(nav);
+console.log(navButton);
 /* On menu button click event */
 $(navButton).click(function(event){
 
@@ -21,6 +23,7 @@ $(navButton).click(function(event){
         $(navButton).removeClass('inactive_reverse active_reverse');
         $(nav).removeClass('fx-box_rotate fx-box_rotate_reverse');
         $(overlay).removeClass('active active_reverse');
+        $(".wrap").css("opacity","1");
 
         /* Add classes on defined elements */
         $(this).siblings().addClass('inactive');
@@ -46,6 +49,7 @@ $(".close").click(function(){
     $('.inactive', nav).addClass('inactive_reverse');
     $(nav).addClass('fx-box_rotate_reverse');
     $(this).parent().addClass('active_reverse');
+    $(".wrap").css("opacity","0");
 
     /* Remove .noscroll and .inactive when animation is finished */
     $('.inactive_reverse').bind(AnimEnd, function(){

@@ -41,7 +41,7 @@ body{
 }
 .header>.nav>ul>li>a{
     font-size: 14px;
-    color: #7f7f7f;
+    color: #ddd;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -53,7 +53,7 @@ body{
     color: #fff;
 }
 .fa{
-    color: #7f7f7f;
+    color: #ddd;
 }
 .nav>ul>li:nth-child(4):hover .fa{
     color: #fff;
