@@ -11,27 +11,27 @@
     
     <style type="text/css">
         /*滚动条整体部分,必须要设置*/
-        body::-webkit-scrollbar{
-            width: 10px;
-            height: 10px;
-            background-color: #333;
-        }
-        /*滚动条的轨道*/
-        body::-webkit-scrollbar-track{
-            box-shadow: inset 0 0 5px rgba(0,0,0,.3);
-            background-color: #ddd;
-        }
-        /*滚动条的滑块按钮*/
-        body::-webkit-scrollbar-thumb{
-            border-radius: 10px;
-            background-color: #7c7c7c;
-            box-shadow: inset 0 0 5px #000;
-        }
-        /*滚动条的上下两端的按钮*/
-        body::-webkit-scrollbar-button{
-            height: 10px;
-            background-color: #B0AEDA;
-        }
+    body::-webkit-scrollbar{
+        width: 10px;
+        height: 10px;
+        background-color: #333;
+    }
+    /*滚动条的轨道*/
+    body::-webkit-scrollbar-track{
+        box-shadow: inset 0 0 5px rgba(0,0,0,.3);
+        background-color: rgb(28,28,28);
+    }
+    /*滚动条的滑块按钮*/
+    body::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        background-color: rgb(51,51,51);
+        box-shadow: inset 0 0 5px #000;
+    }
+    /*滚动条的上下两端的按钮*/
+    body::-webkit-scrollbar-button{
+        height: 10px;
+        background-color: rgb(28,28,28);
+    }
     </style>
 </head>
 <body>
@@ -40,25 +40,61 @@
         <div class="nav">
             <ul>
                 <li><a href="./index.html">首页</a></li>
-                <li><a href="#">服务</a></li>
-                <li><a href="#">项目</a></li>
-                <li><a href="#">关于</a><i class="fa fa-angle-down" style="margin-left:5px;"></i>
+                <li><a href="./services.html">服务</a></li>
+                <li><a href="./project.html">项目</a></li>
+                <li><a href="./about.html">关于</a><i class="fa fa-angle-down" style="margin-left:5px;"></i>
                     <ul class="navtwo">
                         <li><a href="./about.html" class="two_a">集团简介</a></li>
-                        <li><a href="#" class="two_a">荣誉资质</a></li>
-                        <li><a href="#" class="two_a">团队精英</a></li>
-                        <li><a href="#" class="two_a">合作伙伴</a></li>
+                        <li><a href="./404.html" class="two_a">荣誉资质</a></li>
+                        <li><a href="./team.html" class="two_a">团队精英</a></li>
+                        <li><a href="./partner.html" class="two_a">合作伙伴</a></li>
                     </ul>
                 </li>
-                <li><a href="#">新闻</a></li>
+                <li><a href="./news.html">新闻</a></li>
                 <li><a href="./contact.html">联系</a></li>
-                <li><a href="#">招聘</a></li>
+                <li><a href="./tool.html">招聘</a></li>
             </ul>
         </div>
     </div> 
     <div class="main mytable">
         <div class="lunbo fade" id="lunbo">
-            <div class="lunbo_box1">
+            <div class="wrapper_container">
+                <div class="box1">
+                    <ul style="left:-2315px;top:-30px;">
+                        <li><img src="images/wrapper/3.jpg" alt=""></li>
+                        <li><img src="images/wrapper/4.jpg" alt=""></li>
+                        <li><img src="images/wrapper/1.jpg" alt=""></li>
+                        <li><img src="images/wrapper/2.jpg" alt=""></li>
+                        <li><img src="images/wrapper/3.jpg" alt=""></li>
+                        <li><img src="images/wrapper/4.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="box2">
+                    <ul style="left:-1200px">
+                        <li><img src="images/wrapper/4.jpg" alt=""></li>
+                        <li><img src="images/wrapper/1.jpg" alt=""></li>
+                        <li><img src="images/wrapper/2.jpg" alt=""></li>
+                        <li><img src="images/wrapper/3.jpg" alt=""></li>
+                        <li><img src="images/wrapper/4.jpg" alt=""></li>
+                        <li><img src="images/wrapper/1.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="box3">
+                    <ul style="left:-1200px;top:-30px;">
+                        <li><img src="images/wrapper/1.jpg" alt=""></li>
+                        <li><img src="images/wrapper/2.jpg" alt=""></li>
+                        <li><img src="images/wrapper/3.jpg" alt=""></li>
+                        <li><img src="images/wrapper/4.jpg" alt=""></li>
+                        <li><img src="images/wrapper/1.jpg" alt=""></li>
+                        <li><img src="images/wrapper/2.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <a href="javascript:;" id="icon-prev"><i class="fa fa-angle-left fa-5x"></i></a>
+                <a href="javascript:;" id="icon-next"><i class="fa fa-angle-right fa-5x"></i></a>
+                <div id="probar"></div>
+            </div>
+        </div>
+            <!--<div class="lunbo_box1">
                 <div class="box1">
                         <div class="lunbo_item">
                             <div class="image" style="background-image: url('./images/1490071914135.jpg')"></div> 
@@ -107,7 +143,7 @@
                     </div>
             </div>
             <a href="javascript:void(0);" class="icon-prev"><i class="fa fa-angle-left fa-5x"></i></a>
-            <a href="javascript:void(0);" class="icon-next"><i class="fa fa-angle-right fa-5x"></i></a>
+            <a href="javascript:void(0);" class="icon-next"><i class="fa fa-angle-right fa-5x"></i></a>-->
         </div>
         <div class="service fade" id="service">
             <div class="service_header fade_header" id="service_header">
@@ -135,7 +171,7 @@
                     </div>
                     <div class="tab-container">
                             <div class="tab-box">
-                                <div class="owl-item1" id="item1">
+                                <div class="owl-item1" id="0">
                                     <div class="owl-title">
                                         <p>建筑设计</p>
                                         <p>图片尺寸</p>
@@ -145,7 +181,7 @@
                                         <p>广义的建筑设计是指设计一个建筑物或建筑群所要做的全部工作。由于科学技术的发展，在建筑上利用各种科学技术的成果越来越广泛深入，设计工作常涉及建筑学、结构学以及给水、排水，供暖、空气调节、电气、燃气、消防、防火、自动化控制管理、建筑声学、建筑光学、建筑热工学、工程估算，园林绿化等方面的知识，需要各种科学技术人员的密切协作。</p>
                                     </div>
                                 </div>
-                                <div class="owl-item2" id="item2">
+                                <div class="owl-item2" id="1">
                                         <div class="owl-title">
                                             <p>城市规划</p>
                                             <p>City planning</p>
@@ -154,7 +190,7 @@
                                             <p>"城市规划"是研究城市的未来发展、城市的合理布局和综合安排城市各项工程建设的综合部署，是一定时期内城市发展的蓝图，是城市管理的重要组成部分，是城市建设和管理的依据，也是城市规划、城市建设、城市运行三个阶段管理的前提。<br>城市规划是以发展眼光、科学论证、专家决策为前提，对城市经济结构、空间结构、社会结构发展进行规划，常常包括城市片区规划。具有指导和规范城市建设的重要作用，是城市综合管理的前期工作，是城市管理的龙头。城市的复杂系统特性决定了城市规划是随城市发展与运行状况长期调整、不断修订，持续改进和完善的复杂的连续决策过程。</p>
                                         </div>
                                 </div>
-                                <div class="owl-item3" id="item3">
+                                <div class="owl-item3" id="2">
                                     <div class="owl-title">
                                         <p>景观设计</p>
                                         <p>Landscape Design</p>
@@ -163,7 +199,7 @@
                                         <p>风景园林规划设计（景观设计）[1]  要素包括自然景观要素和人工景观要素。其中自然景观要素主要是指自然风景，如大小山丘、古树名木、石头、河流、湖泊、海洋等。人工景观要素主要有文物古迹、文化遗址、园林绿化、艺术小品、商贸集市、建构筑物、广场等。<br>这些景观要素为创造高质量的城市空间环境提供了大量的素材，但是要形成独具特色的城市景观，必须对各种景观要素进行系统组织，并且结合风水使其形成完整和谐的景观体系，有序的空间形态。<br>景观设计主要服务于：城市景观设计（城市广场、商业街、办公环境等）、居住区景观设计、城市公园规划与设计、滨水绿地规划设计、旅游度假区与风景区规划设计等。</p>
                                     </div>
                                 </div>
-                                <div class="owl-item4" id="item4">
+                                <div class="owl-item4" id="3">
                                     <div class="owl-title">
                                         <p>室内设计</p>
                                         <p>Interior design</p>
@@ -172,7 +208,7 @@
                                         <p>现代室内设计作为一门新兴的学科，尽管还只是近数十年的事，但是人们有意识地对自己生活、生产活动的室内进行安排布置，甚至美化装饰，赋予室内环境以所祈使的气氛，却早巳从人类文明伊始的时期就已存在。 自建筑的开始，室内的发展即同时产生，所以研究室内设计史就是研究建筑史。<br>室内设计是指为满足一定的建造目的（包括人们对它的使用功能的要求、对它的视觉感受的要求）而进行的准备工作，对现有的建筑物内部空间进行深加工的增值准备工作。目的是为了 让具体的物质材料在技术、经济等方面，在可行性的有限条件下形成能够成为合格产品的准备工作。需要工程技术上的知识，也需要艺术上的理论和技能。室内设计是从建筑设计中的装饰部分演变出来的。他是对建筑物内部环境的再创造。室内设计可以分为公共建筑空间和居家两大类别。当我们提到室内设计时，会提到的还有动线、空间、色彩、照明、功能等等相关的重要术语。</p>
                                     </div>
                                 </div>
-                                <div class="owl-item5" id="item5">
+                                <div class="owl-item5" id="4">
                                     <div class="owl-title">
                                         <p>岩土工程</p>
                                         <p>Geotechnical engineering</p>
@@ -181,7 +217,7 @@
                                         <p>随着多种所有制工程施工企业的发展及跨区域经营障碍被打破，岩土工程市场已处于完全竞争状态。岩土工程项目承接主要通过公开招投标活动实现，行业内市场化程度较高，市场集中度偏低。<br>我国岩土工程行业具有企业数量多、规模小的特点。据《2013-2017年中国岩土工程行业发展前景与投资战略规划分析报告》统计，我国仅从事强夯业务的企业就超过300家，岩土工程行业的集中度较低，导致优势企业无法形成规模优势。这与发达国家该行业高度集中的特点形成了鲜明对比。</p>
                                     </div>
                                 </div>
-                                <div class="owl-item6" id="item6">
+                                <div class="owl-item6" id="5">
                                     <div class="owl-title">
                                         <p>结果工程</p>
                                         <p>Agricultural products processing</p>
@@ -190,7 +226,7 @@
                                         <p>充分利用我省丰富的粮食资源，重点发展冷冻米面主食、速食米面制品、速冻玉米......</p>
                                     </div>
                                 </div>
-                                <div class="owl-item7" id="item7">
+                                <div class="owl-item7" id="6">
                                     <div class="owl-title">
                                         <p>策划咨询</p>
                                         <p>Planning advice</p>
@@ -199,7 +235,7 @@
                                         <p>策划是一种策略、筹划、谋划或者计划、打算，它是个人、企业、组织结构为了达到一定的目的，充分调查市场环境及相关联的环境的基础之上，遵循一定的方法或者规则，对未来即将发生的事情进行系统、周密、科学的预测并制订科学的可行性的方案。在现代生活中，常用于形容做一件事的计划，或是一种职位的名称</p>
                                     </div>
                                 </div>
-                                <div class="owl-item8" id="item8">
+                                <div class="owl-item8" id="7">
                                     <div class="owl-title">
                                         <p>造价咨询</p>
                                         <p>Cost consultation</p>
@@ -216,9 +252,9 @@
                             </div>
                     </div>
                 </div>
-                <div class="tab-button">
-                    <div class="tab-item1">
-                        <a href="javascript:void(0);" data-target="#item1">
+                <div class="tab-button" id="services">
+                    <div class="tab-item">
+                        <a href="javascript:void(0);" data-a="0">
                             <div><img src="./images/1490077085525.png" alt=""></div>
                             <div>
                                 <p id="t1">01/</p>
@@ -227,8 +263,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="tab-item2">
-                        <a href="javascript:void(0);" data-target="#item2">
+                    <div class="tab-item">
+                        <a href="javascript:void(0);" data-a="1">
                             <div><img src="./images/1490075922783.png" alt=""></div>
                             <div>
                                 <p id="t1">02/</p>
@@ -237,8 +273,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="tab-item3">
-                        <a href="javascript:void(0);">
+                    <div class="tab-item">
+                        <a href="javascript:void(0);" data-a="2">
                             <div><img src="./images/1490076036776.png" alt=""></div>
                             <div>
                                 <p id="t1">03/</p>
@@ -247,8 +283,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="tab-item4">
-                        <a href="javascript:void(0);" data-toggle="">
+                    <div class="tab-item">
+                        <a href="javascript:void(0);" data-a="3">
                             <div><img src="./images/1490076244647.png" alt=""></div>
                             <div>
                                 <p id="t1">04/</p>
@@ -257,8 +293,8 @@
                             </div>
                         </a>
                     </div>
-                    <div  class="tab-item5">
-                        <a href="javascript:void(0);">
+                    <div  class="tab-item">
+                        <a href="javascript:void(0);" data-a="4">
                             <div><img src="./images/1490076286323.png" alt=""></div>
                             <div>
                                 <p id="t1">05/</p>
@@ -267,8 +303,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="tab-item6">
-                        <a href="javascript:void(0);">
+                    <div class="tab-item">
+                        <a href="javascript:void(0);" data-a="5">
                             <div><img src="./images/1490076330843.png" alt=""></div>
                             <div>
                                 <p id="t1">06/</p>
@@ -277,8 +313,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="tab-item7">
-                        <a href="javascript:void(0);">
+                    <div class="tab-item">
+                        <a href="javascript:void(0);" data-a="6">
                             <div><img src="./images/1490076500816.png" alt=""></div>
                             <div>
                                 <p id="t1">07/</p>
@@ -287,8 +323,8 @@
                             </div>
                         </a>
                     </div>
-                    <div  class="tab-item8">
-                        <a href="javascript:void(0);">
+                    <div  class="tab-item">
+                        <a href="javascript:void(0);" data-a="7">
                             <div><img src="./images/1490079371411.png" alt=""></div>
                             <div>
                                 <p id="t1">08/</p>
@@ -841,12 +877,18 @@
         <a href="javascript:void(0);" class="weibo">
             <i class="fa fa-weibo"></i>
         </a>
-        <a href="javascript:void(0);" class="weixin">
+        <a href="javascript:void(0);" class="weixin" id="weixin">
             <i class="fa fa-weixin"></i>
         </a>
-        <a href="javascript:void(0);" class="up">
+        <a href="javascript:void(0);" class="up fade" id="up">
             <i class="fa fa-angle-up"></i>
         </a>
+    </div>
+    <div class="zh-weixin" id="zh_weixin">
+        <div class="weixin_box">
+            <img src="./images/wx.png" alt="">
+            <p>扫描二维码扫描微信</p>
+        </div>
     </div>
     <div class="message_big" id="message_big">
         <div class="top">
@@ -873,6 +915,7 @@
     <script src="./js/index.js"></script>
     <script src="./js/lib/stats.js"></script>
     <script src="./layer-v3.1.1/layer/layer.js"></script>
+    <script src="./js/main_wrapper.js"></script>
 
     <script>
             /*function addNum(){

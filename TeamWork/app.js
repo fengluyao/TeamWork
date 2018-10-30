@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParse = require("body-parser");
 const users = require("./routes/users");
+const project = require("./routes/project");
+const services=require("./routes/services");
 
 var app = express();
 
@@ -12,3 +14,5 @@ var server = app.listen(3030,function(){
 })
 
 app.use("/users",users);
+app.use("/project",project);
+app.use("/services",services);

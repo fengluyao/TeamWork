@@ -1,4 +1,4 @@
-var t = 1;
+/*var t = 1;
 var box1 = $(".box1");
 var box2 = $(".box2");
 var box3 = $(".box3");
@@ -75,81 +75,25 @@ var timer = setInterval(function(){
             t=1;
             break;
   }
-},3000);
+},3000);*/
 var prev = $(".owl-prev");
 var next = $(".owl-next");
-var i = 1;
+var i=$(this).attr("data-a")
 prev.on("click",function(){
-    switch(i){
-        case 1: $(".tab-box").css("left","-6160px");
-                $(".number-box").css("top","-456px")
-                i=8;
-                break;
-        case 2: $(".tab-box").css("left","0px");
-                $(".number-box").css("top","7px")
-                i--;
-                break;
-        case 3: $(".tab-box").css("left","-880px");
-                $(".number-box").css("top","-59px");
-                i--;
-                break;
-        case 4: $(".tab-box").css("left","-1760px");
-                $(".number-box").css("top","-126px")
-                i--;
-                break;
-        case 5: $(".tab-box").css("left","-2640px");
-                $(".number-box").css("top","-192px")
-                i--;
-                break;
-        case 6: $(".tab-box").css("left","-3520px");
-                $(".number-box").css("top","-258px")
-                i--;
-                break;
-        case 7: $(".tab-box").css("left","-4400px");
-                $(".number-box").css("top","-324px")
-                i--;
-                break;
-        case 8: $(".tab-box").css("left","-5280px");
-                $(".number-box").css("top","-389px")
-                i--;
-                break;
-    }
+  i++;
+  if(i>=8){
+      i=7
+  }
+  move.css("left",-i*width)
+  font2.css("top",-i*66)
 })
 next.on("click",function(){
-    switch(i){
-        case 1: $(".tab-box").css("left","-880px");
-                $(".number-box").css("top","-59px");
-                i++;
-                break;
-        case 2: $(".tab-box").css("left","-1760px");
-                $(".number-box").css("top","-126px")
-                i++;
-                break;
-        case 3: $(".tab-box").css("left","-2640px");
-                $(".number-box").css("top","-192px")
-                i++;
-                break;
-        case 4: $(".tab-box").css("left","-3520px");
-                $(".number-box").css("top","-258px")
-                i++;
-                break;
-        case 5: $(".tab-box").css("left","-4400px");
-                $(".number-box").css("top","-324px")
-                i++;
-                break;
-        case 6: $(".tab-box").css("left","-5280px");
-                $(".number-box").css("top","-389px")
-                i++;
-                break;
-        case 7: $(".tab-box").css("left","-6160px");
-                $(".number-box").css("top","-456px")
-                i++;
-                break;
-        case 8: $(".tab-box").css("left","0px");
-                $(".number-box").css("top","7px")
-                i=1;
-                break;
-    }
+  i--;
+  if(i<=0){
+      i=0
+  }
+  move.css("left",-i*width)
+  font2.css("top",-i*66)
 })
 $(".close").click(function(){
   $(".tab-content").css("height","0");
@@ -164,6 +108,17 @@ $(".tab-button>div>a").click(function(){
   $(".tab-content").css("padding-bottom","50px");
   $(".tab-content").css("padding-top","50px");
   $(".tab-button").css("margin-top","70px");
+})
+
+var width = 880;
+var move=$(".tab-box");
+var font2=$(".number-box")
+var services=$("#services");
+services.on("click",".tab-item>a",function(){
+    console.log($(this).attr("data-a"))
+    i=$(this).attr("data-a")
+    move.css("left",-i*width)
+    font2.css("top",-i*66)
 })
 
 /*canvas*/
@@ -335,7 +290,11 @@ window.onscroll=function(){
     var t = document.documentElement.scrollTop||document.body.scrollTop;
     //服务部分
     var elem = $("#service");
+    if(t == 0){
+      $("#up").attr("class","up fade");
+    }
     if(t>0){
+      $("#up").attr("class","up fade in");
       elem.attr("class","service fade in");
     }
     if(t<=0){
@@ -723,187 +682,82 @@ $("#close").click(function(){
   removeMessage();
   setTimeout(function(){
     message();
-  },10000);
+  },30000);
 })
 
 
 
-//滑动遮罩层
-// $(".partner_list li a").each(function(){
-//   $(this).append("<div class=slidiv></div>");
-// });
-// $(".partner_list li a").bind("mouseenter mouseleave",  function(e) {
-//   this_slidiv = $(this).find('.slidiv');
-//   this_slidiv.css("opacity","1");
-//   var w = $(this).width();
-//   var h = $(this).height();
-//   var x = e.offsetX ;//(- this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
-//   var y = e.offsetY ;//(- this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
-//   var direction = Math.round((((Math.atan2(y, x) * (180 / Math.PI)) + 180) / 90) + 3) % 4;
+$("#weixin").click(function(){
+  $("#zh_weixin").css("z-index","999999");
+  $("#zh_weixin").css("opacity","1");
+  unScroll();
+})
+$("#zh_weixin").click(function(){
+  $("#zh_weixin").css("z-index","-1");
+  $("#zh_weixin").css("opacity","0");
+  removeUnScroll();
+})
 
-   
-//    if(e.type == 'mouseenter'){
-//        switch(direction){
-//          case 0 :
-//            this_slidiv.css({top:-h,left:"0px"});
-//              break;
-//          case 1:
-//            this_slidiv.css({top:"0px",left:w});
-//              break;
-//          case 2:
-//            this_slidiv.css({top:h,left:"0px"});
-//              break;
-//          case 3:
-//            this_slidiv.css({top:"0px",left:-w});
-//              break;
-//     }
-  
-//       this_slidiv.stop(true,true).animate({"top":"0px","left":"0px"},"fast");
-      
-//    }else if(e.type == 'mouseleave'){
-//        switch(direction){
-//          case 0 :
-//            this_slidiv.stop(true,true).animate({"top":-h},"fast");
-//              break;
-//          case 1:
-//            this_slidiv.stop(true,true).animate({"left":w},"fast");
-//              break;
-//          case 2:
-//            this_slidiv.stop(true,true).animate({"top":h},"fast");
-//              break;
-//          case 3:
-//            this_slidiv.stop(true,true).animate({"left":-w},"fast");
-//              break;
-//     }		
-//  }
-// });
+function Top(){
+  $('body,html').animate({'scrollTop':0},300)
+}
+$("#up").click(function(){
+  Top();
+})
+
+//隐藏小的信息，显示大的信息
+function message(){
+  $("#message").css("right","-50px");
+  $("#message_big").css("right","10px");
+  unScroll()
+}
+//屏蔽滚动条
+function unScroll() {
+  var top = $(document).scrollTop();
+  $(document).on('scroll.unable',function (e) {
+      $(document).scrollTop(top);
+  })
+}
+//去除屏蔽滚动条
+function removeUnScroll() {
+  $(document).unbind("scroll.unable");
+}
 
 
+$("#message").click(function(){
+  message();
+})
+
+//隐藏大的信息，显示小的信息
+function removeMessage(){
+  $("#message").css("right","0");
+  $("#message_big").css("right","-200px");
+  removeUnScroll();
+}
+
+$("#close").click(function(){
+  removeMessage();
+  setTimeout(function(){
+    message();
+  },30000);
+})
 
 
 
+$("#weixin").click(function(){
+  $("#zh_weixin").css("z-index","999999");
+  $("#zh_weixin").css("opacity","1");
+  unScroll();
+})
+$("#zh_weixin").click(function(){
+  $("#zh_weixin").css("z-index","-1");
+  $("#zh_weixin").css("opacity","0");
+  removeUnScroll();
+})
 
-
-
-//这个模块完成鼠标方向判断的功能
-// var MouseDirection = function (element, opts) {
-
-//   var $element = $(element);
-
-//   //enter leave代表鼠标移入移出时的回调
-//   opts = $.extend({}, {
-//       enter: $.noop,
-//       leave: $.noop
-//   }, opts || {});
-
-//   var dirs = ['top', 'right', 'bottom', 'left'];
-
-//   var calculate = function (element, e) {
-//       /*以浏览器可视区域的左上角建立坐标系*/
-
-//       //表示左上角和右下角及中心点坐标
-//       var x1, y1, x4, y4, x0, y0;
-
-//       //表示左上角和右下角的对角线斜率
-//       var k;
-
-//       //用getBoundingClientRect比较省事，而且它的兼容性还不错
-//       var rect = element.getBoundingClientRect();
-
-//       if (!rect.width) {
-//           rect.width = rect.right - rect.left;
-//       }
-
-//       if (!rect.height) {
-//           rect.height = rect.bottom - rect.top;
-//       }
-
-//       //求各个点坐标 注意y坐标应该转换为负值，因为浏览器可视区域左上角为(0,0)，整个可视区域属于第四象限
-//       x1 = rect.left;
-//       y1 = -rect.top;
-
-//       x4 = rect.left + rect.width;
-//       y4 = -(rect.top + rect.height);
-
-//       x0 = rect.left + rect.width / 2;
-//       y0 = -(rect.top + rect.height / 2);
-
-//       //矩形不够大，不考虑
-//       if (Math.abs(x1 - x4) < 0.0001) return 4;
-
-//       //计算对角线斜率
-//       k = (y1 - y4) / (x1 - x4);
-
-//       var range = [k, -k];
-
-//       //表示鼠标当前位置的点坐标
-//       var x, y;
-
-//       x = e.clientX;
-//       y = -e.clientY;
-
-//       //表示鼠标当前位置的点与元素中心点连线的斜率
-//       var kk;
-
-//       kk = (y - y0) / (x - x0);
-
-//       //如果斜率在range范围内，则鼠标是从左右方向移入移出的
-//       if (isFinite(kk) && range[0] < kk && kk < range[1]) {
-//           //根据x与x0判断左右
-//           return x > x0 ? 1 : 3;
-//       } else {
-//           //根据y与y0判断上下
-//           return y > y0 ? 0 : 2;
-//       }
-//   };
-
-//   $element.on('mouseenter', function (e) {
-//       var r = calculate(this, e);
-//       opts.enter($element, dirs[r]);
-//   }).on('mouseleave', function (e) {
-//       var r = calculate(this, e);
-//       opts.leave($element, dirs[r]);
-//   });
-// };
-
-// $(".partner_list li a").each(function(){
-//   $(this).append("<div class='slidiv'></div>");
-// });
-
-// var DIR_POS = {
-//   left: {
-//       top: '0',
-//       left: '-100%'
-//   },
-//   right: {
-//       top: '0',
-//       left: '100%'
-//   },
-//   bottom: {
-//       top: '100%',
-//       left: '0'
-//   },
-//   top: {
-//       top: '-100%',
-//       left: '0'
-//   }
-// };
-// $('.partner_list li a').each(function () {
-//   new MouseDirection(this, {
-//       enter: function ($element, dir) {
-//           //每次进入前先把.trans类移除掉，以免后面调整位置的时候也产生过渡效果
-//           var $content = $element.find('.slidiv').removeClass('trans');
-//           //调整位置
-//           $content.css(DIR_POS[dir]);
-//           //reflow
-//           $content[0].offsetWidth;
-//           //启用过渡
-//           $content.addClass('trans');
-//           //滑入
-//           $content.css({left: '0', top: '0'});
-//       },
-//       leave: function ($element, dir) {
-//           $element.find('.slidiv').css(DIR_POS[dir]);
-//       }
-//   });
-// });
+function Top(){
+  $('body,html').animate({'scrollTop':0},300)
+}
+$("#up").click(function(){
+  Top();
+})
