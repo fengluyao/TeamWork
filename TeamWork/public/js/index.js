@@ -755,6 +755,17 @@ $("#zh_weixin").click(function(){
   removeUnScroll();
 })
 
+$("#lianjie").click(function(){
+  $("#about_zh").css("z-index","999999");
+  $("#about_zh").css("opacity","1");
+  unScroll();
+})
+$("#about_zh").click(function(){
+  $("#about_zh").css("z-index","-1");
+  $("#about_zh").css("opacity","0");
+  removeUnScroll();
+})
+
 function Top(){
   $('body,html').animate({'scrollTop':0},300)
 }
