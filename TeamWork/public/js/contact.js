@@ -67,6 +67,18 @@ window.onscroll=function(){
     if(t<700){
         $("#contactform").attr("class","contactform fade");
     }
+    if(t>=1200){
+        $("#container").attr("class","fade in");
+    }
+    if(t<1200){
+        $("#container").attr("class","fade");
+    }
+    if(t>=1200){
+        $("#search").attr("class"," search search-fade search-in");
+    }
+    if(t<1200){
+        $("#search").attr("class"," search search-fade");
+    }
   }
 }
 
@@ -131,3 +143,7 @@ function message(){
   $("#up").click(function(){
     Top();
   })
+
+
+
+  
